@@ -22,18 +22,18 @@ These engineered features help capture meaningful patterns in the data.
 
 Missing values are handled as follows:
 
-🔸 Item_Weight
-Problem: Some entries in the Item_Weight column are missing.
-Solution:
-For each missing value, the notebook looks up the average weight of items with the same Item_Identifier.
-If no matching identifier is found, it falls back to the overall mean weight.
-Rationale: This preserves item-specific characteristics and avoids introducing bias from global averages.
-🔸 Outlet_Size
-Problem: The Outlet_Size column has missing values, especially for certain outlet types.
-Solution:
-The mode (most frequent value) of Outlet_Size is computed for each Outlet_Type.
-Missing values are filled using the mode corresponding to their Outlet_Type.
-Rationale: This leverages known relationships between outlet type and size, maintaining consistency in categorical distributions.
+- ** Item_Weight
+  - Problem: Some entries in the Item_Weight column are missing.
+  - Solution:
+    For each missing value, the notebook looks up the average weight of items with the same Item_Identifier.
+    If no matching identifier is found, it falls back to the overall mean weight.
+  - Rationale: This preserves item-specific characteristics and avoids introducing bias from global averages.
+- ** Outlet_Size
+  - Problem: The Outlet_Size column has missing values, especially for certain outlet types.
+  - Solution:
+    The mode (most frequent value) of Outlet_Size is computed for each Outlet_Type.
+    Missing values are filled using the mode corresponding to their Outlet_Type.
+  - Rationale: This leverages known relationships between outlet type and size, maintaining consistency in categorical distributions.
 
 This ensures a complete and unbiased dataset for training.
 
